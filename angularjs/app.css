@@ -1,0 +1,28 @@
+.text, .nameLink {
+	-webkit-font-smoothing: antialiased;
+	font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	word-wrap: break-word;
+	width: 640px;
+}
+
+.nameLink {
+	-webkit-tap-highlight-color: rgba(63, 114, 155, 0.298039);
+	color: rgb(63, 114, 155);
+	cursor: auto;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 20px;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+.text {
+	color: rgb(34, 34, 34);
+	display: inline;
+	font-size: 14px;
+	height: auto;
+	line-height: 20px;
+	width: auto;
+}

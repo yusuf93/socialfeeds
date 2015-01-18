@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container">
+		<div ng-app="SocialFeeds" ng-controller="InstagramCtrl">
+			<button ng-click="getPics()"> 
+				Click me
+			</button>
+			<div ng-repeat="pic in pics">
+				<a href="{{ pic.link }}">
+					<img src="{{ pic.images.standard_resolution.url }}">
+				</a> <br>
+				<a class="nameLink" href="http://instagram.com/{{ pic.user.username }}"> 
+					{{ pic.user.username }} 
+				</a> <br>
+				<span> {{ pic.caption.text }} </span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
