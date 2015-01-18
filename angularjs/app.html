@@ -3,24 +3,28 @@
 <head>
 	<script src="angular.js"></script>
 	<script src="app.js"></script>
-	<link rel="stylesheet" href="app.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="app.css">
 </head>
 <body>
-	<div class="container">
-		<div ng-app="SocialFeeds" ng-controller="InstagramCtrl">
-			<button ng-click="getPics()"> 
-				Refresh
-			</button>
-			<div ng-repeat="pic in pics">
-				<a href="{{ pic.link }}">
-					<img src="{{ pic.images.standard_resolution.url }}">
-				</a> <br>
-				<a class="nameLink" href="http://instagram.com/{{ pic.user.username }}"> 
-					{{ pic.user.username }} 
-				</a> <br>
-				<span> {{ pic.caption.text }} </span>
+	<div class="container" ng-app="SocialFeeds" ng-controller="InstagramCtrl">
+		<button ng-click="getPics()"> 
+			Refresh
+		</button>
+		<div ng-repeat="pic in pics" class="instagram-post">
+			<div class="row">
+				<a href="{{ pic.link }}" class="col-md-6 col-md-offset-3">
+					<img src="{{ pic.images.standard_resolution.url }}" class="img-responsive">
+				</a>
+			</div>
+			<div class="row">
+				<p class="col-md-6 col-md-offset-3">
+					<a class="nameLink" href="http://instagram.com/{{ pic.user.username }}"> 
+						{{ pic.user.username }} 
+					</a>
+					{{ pic.caption.text }}
+				</p>
 			</div>
 		</div>
 	</div>
